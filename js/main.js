@@ -14,14 +14,21 @@ var carImg = document.querySelectorAll('.data-ref'),
       carPrice.firstChild.nodeValue = objectIndex.price;
       carDesc.firstChild.nodeValue = objectIndex.text;
 
+      carImg.forEach(function(element, index){
+        element.classList.add('nonActive');
+      })
+
+      this.classList.remove('nonActive');
+
     }
 
-    // carImg.forEach(function(image, index) {
-    // image.addEventlistener('click', changeElements, false);
+    carImg.forEach(function(element, index) {
+     element.addEventListener('click', changeElements, false);
+   })
 
-    for (var i=0; i < carImg.lenght; i++){
-     carImg[i].addEventlistener('click', changeElements, false);
-  }
+    //for (var i=0; i < carImg.length; i++){
+    // carImg[i].addEventListener('click', changeElements, false);
+  //}
 
 
 
